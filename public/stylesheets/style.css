@@ -1,8 +1,95 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: arial;
+  font-weight: bold;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+}
+
+
+/* MOBILE */
+
+.hf_img_holder {
+  height: 270px;
+  background-position: 25% 50%; /* Default focus point */
+  background-size: cover;
+}
+
+#home_feature.ft_left .hf_img_holder {
+  background-position: 75% 50%; /* Focus point on feature left */
+}
+
+#feature_text {
+  background-color: #ffff;
+  overflow: hidden;
+}
+
+#feature_text h2 {
+  color: #fff;
+  font-size: 2.3125em;
+  font-weight: 100;
+  margin: 0;
+  padding: 1rem;
+  padding-bottom: 0;
+}
+
+#feature_text p {
+  color: #fff;
+  font-size: 1.3125em;
+  font-weight: 100;
+  margin: 0;
+  padding: 1rem;
+}
+
+#feature_text a.btn.learn {
+  border: 0 none;
+  border-radius: 0;
+  color: #fff;
+  margin-left: -1.9em;
+  text-align: right;
+  width: 100%;
+}
+
+#feature_text a.btn.learn:after {
+  background: url("http://rel.resultspw.com/css/../images/wht_arrow.svg") no-repeat scroll center top rgba(0, 0, 0, 0);
+  content: "";
+  display: inline-block;
+  height: 13px;
+  margin-left: 0.5em;
+  width: 7px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 15px;
+}
+
+
+/* DESKTOP */
+
+@media only screen and (min-width: 768px) {
+  .hf_img_holder {
+    position: absolute;
+    height: 450px;
+    width: 100%;
+    background-image: url("http://rel.resultspw.com/images/large-hero.jpg") !important; /* Desktop bkg */
+  }
+  #home_feature .container {
+    margin: 0 auto;
+    max-width: 936px;
+    padding: 1em;
+  }
+  #feature_text {
+    border-radius: 9px;
+    float: right;
+    margin-top: 2.25em;
+    position: relative;
+    width: 46%;
+  }
+  #feature_text.ft_left {
+    float: left;
+  }
 }
