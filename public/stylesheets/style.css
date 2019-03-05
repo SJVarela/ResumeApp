@@ -75,7 +75,7 @@ a {
     position: absolute;
     height: 450px;
     width: 100%;
-    background-image: url("http://rel.resultspw.com/images/large-hero.jpg") !important; /* Desktop bkg */
+    background-image: url("../images/background.jpg") !important; /* Desktop bkg */
   }
   #home_feature .container {
     margin: 0 auto;
