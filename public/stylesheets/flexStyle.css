@@ -1,0 +1,47 @@
+.heading{
+    height: 16em;
+    background: #f3f3f3;
+}
+
+#name h1 {
+	font-size: 2.5em;
+	font-weight: 700;
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+	margin-bottom: -6px;
+}
+#name h2 {
+	font-size: 2em;
+	margin-left: 2px;
+	font-family: 'Rokkitt', Helvetica, Arial, sans-serif;
+}
+.main-container{
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    background: rgb(172, 167, 167);
+}
+.container{
+    display: flex;
+    width: 90%;
+    flex-flow: row wrap;
+    background: rgb(223, 117, 117);
+    margin: 2em auto;
+}
+.title-container{
+    width: 20%;
+    background: #000;
+}
+.content-container{
+    width: 80%;
+    background: #cfcfcf;
+}
+@media only screen and (max-width: 600px) {
+    .title-container{
+        width: 100%;
+        background: #000;
+    }
+    .content-container{
+        width: 100%;
+        background: #cfcfcf;
+    }
+  }

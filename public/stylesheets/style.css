@@ -73,23 +73,26 @@ a {
 @media only screen and (min-width: 768px) {
   .hf_img_holder {
     position: absolute;
-    height: 450px;
+    height: 100%;
     width: 100%;
     background-image: url("../images/background.jpg") !important; /* Desktop bkg */
   }
   #home_feature .container {
     margin: 0 auto;
     max-width: 936px;
-    padding: 1em;
+    padding: 1em;    
   }
   #feature_text {
     border-radius: 9px;
-    float: right;
     margin-top: 2.25em;
     position: relative;
     width: 46%;
-  }
+  }  
   #feature_text.ft_left {
     float: left;
+    background: rgb(50, 46, 100);
+  }
+  #feature_text.foot {
+    background: rgb(26, 25, 53);
   }
 }
