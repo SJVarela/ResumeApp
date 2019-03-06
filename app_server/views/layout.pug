@@ -1,17 +1,16 @@
 doctype html
-html(ng-app='resumeApp')
-  head
-    meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title= title
-    //- link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='/stylesheets/flexStyle.css')
-    link(href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Lato:400,300' rel='stylesheet' type='text/css')
 
-  body
+html
+  head
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title= title
+    link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Roboto')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' integrity='sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr' crossorigin='anonymous')
+    style.
+      html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+  body.w3-light-grey
+
     block content
 
-    script(src='/angular/angular.min.js')
-    script(src='/angular/resumeApp.js')
-    script(src='/javascripts/jquery-3.3.1.min.js')
-    script(src='/javascripts/bootstrap.min.js')
     

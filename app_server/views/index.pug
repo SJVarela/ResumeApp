@@ -1,15 +1,68 @@
 extends layout
 
+mixin generateProjects(projects)
+  each project in projects
+    .w3-container
+      h5.w3-opacity
+        b= project.title
+      p= project.description
+      a(href=project.link, target = "_blank") 
+        i.fab.fa-github.w3-large.w3-text-grey  Check it out!
+      hr
+mixin generateEducations(educations)
+  each education in educations
+    .w3-container
+      h5.w3-opacity
+        b= education.inst
+      h6.w3-text-teal
+        i.fa.fa-calendar.fa-fw.w3-margin-right
+        = education.date
+      p= education.degree
+      hr
+
 block content
-  div(id="name" class="heading")
-    h1 Santiago Varela
-    h2 Web Designer
-  div(class="main-container")
-    div(class="container")
-      div(class="title-container") This is the title
-      div(class="content-container") This is the content
-    div(class="container")
-      div(class="title-container") This is the title1
-      div(class="content-container") This is the content1
+  .w3-content.w3-margin-top(style='max-width:1400px;')
+  // The Grid
+  .w3-row-padding
+    // Left Column
+    .w3-third
+      .w3-white.w3-text-grey.w3-card-4
+        .w3-display-container
+          img(src='./images/background.jpg' style='width:100%' alt='Avatar')
+          .w3-display-bottomleft.w3-container.w3-text-white
+            h2 Santiago Varela
+        .w3-container
+          p
+            i.fa.fa-briefcase.fa-fw.w3-margin-right.w3-large.w3-text-teal
+            | Web Developer
+          hr
+          p.w3-large
+            b
+              i.fa.fa-asterisk.fa-fw.w3-margin-right.w3-text-teal
+              | Platforms
+          ul.w3-large
+            li .NET  
+            li Node.js   
+          hr        
+          p.w3-large.w3-text-theme
+            b
+              i.fa.fa-code.fa-fw.w3-margin-right.w3-text-teal
+              | Languages
+          ul.w3-large
+            li C#
+            li JavaScript
+          br
+      br
+    .w3-twothird
+      .w3-container.w3-card.w3-white.w3-margin-bottom
+        h2.w3-text-grey.w3-padding-16
+          i.fa.fa-code-branch.fa-fw.w3-margin-right.w3-xxlarge.w3-text-teal
+          | Projects
+        +generateProjects(resume.projects)
+      .w3-container.w3-card.w3-white
+        h2.w3-text-grey.w3-padding-16
+          i.fa.fa-university.fa-fw.w3-margin-right.w3-xxlarge.w3-text-teal
+          | Education
+        +generateEducations(resume.education)       
 
-
+  
