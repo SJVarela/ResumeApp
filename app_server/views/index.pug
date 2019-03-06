@@ -19,7 +19,11 @@ mixin generateEducations(educations)
         = education.date
       p= education.degree
       hr
-
+mixin generateList(items)
+  ul.w3-large
+    each item in items    
+      li= item   
+  hr   
 block content
   .w3-content.w3-margin-top(style='max-width:1400px;')
   // The Grid
@@ -30,28 +34,23 @@ block content
         .w3-display-container
           img(src='./images/background.jpg' style='width:100%' alt='Avatar')
           .w3-display-bottomleft.w3-container.w3-text-white
-            h2 Santiago Varela
+            h2= resume.name
         .w3-container
           p
             i.fa.fa-briefcase.fa-fw.w3-margin-right.w3-large.w3-text-teal
-            | Web Developer
+            = resume.job
           hr
           p.w3-large
             b
-              i.fa.fa-asterisk.fa-fw.w3-margin-right.w3-text-teal
+              i.fa.fa-terminal.fa-fw.w3-margin-right.w3-text-teal
               | Platforms
-          ul.w3-large
-            li .NET  
-            li Node.js   
-          hr        
+            +generateList(resume.platforms)      
           p.w3-large.w3-text-theme
             b
               i.fa.fa-code.fa-fw.w3-margin-right.w3-text-teal
               | Languages
-          ul.w3-large
-            li C#
-            li JavaScript
-          br
+            +generateList(resume.languages)
+
       br
     .w3-twothird
       .w3-container.w3-card.w3-white.w3-margin-bottom
