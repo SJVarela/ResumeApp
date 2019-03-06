@@ -21,10 +21,10 @@ mixin generateEducations(educations)
       p= education.degree
       hr
 mixin generateList(items)
-  ul.w3-large
+  ul.w3-ul.w3-large
     each item in items    
       li= item   
-  hr   
+     
 block content
   .w3-content.w3-margin-top(style='max-width:1400px;')
   // The Grid
@@ -65,6 +65,7 @@ block content
         h2.w3-text-grey.w3-padding-16
           i.fa.fa-code.fa-fw.w3-margin-right.w3-text-teal
           | Languages
-        +generateList(resume.languages)   
+        +generateList(resume.languages)  
+        p.w3-large.w3-text-theme 
 
   
