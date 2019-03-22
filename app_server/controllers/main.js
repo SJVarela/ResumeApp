@@ -4,7 +4,7 @@ module.exports.index = function(req, res) {
     resume: {
       name: "Santiago Varela",
       job: "Web developer",
-      platforms: [".NET", "Node.js"],
+      platforms: ["React", ".NET", "Node.js"],
       languages: ["C#", "JavaScript"],
       projects: [
         {
@@ -12,6 +12,12 @@ module.exports.index = function(req, res) {
           description:
             "The current resumé, done with Node.js and Pug as the template engine",
           link: "https://github.com/SJVarela/ResumeApp"
+        },
+        {
+          title: "Task manager app",
+          description:
+            "A React app to manage tasks. Done with stateless functional components",
+          link: "https://github.com/SJVarela/TaskManager"
         }
       ],
       education: [
