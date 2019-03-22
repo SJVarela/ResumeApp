@@ -3,7 +3,7 @@ module.exports.index = function(req, res) {
     title: "Santiago Varela Resume",
     resume: {
       name: "Santiago Varela",
-      job: "Web developer",
+      job: "Software developer",
       platforms: ["React", ".NET", "Node.js"],
       languages: ["C#", "JavaScript"],
       projects: [
