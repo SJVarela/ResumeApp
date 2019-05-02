@@ -3,21 +3,21 @@ extends layout
 mixin generateProjects(projects)
     each project in projects
         .col.s12.m6
-            .card.medium
+            .card.large
                 .card-content
-                    h3.grey-text
+                    h3.header
                         b= project.title
                     p.flow-text= project.description
                 .card-action.grey.lighten-3
-                    a.btn.grey(href=project.link, target = "_blank")
-                        i.fab.fa-github.medium.left
+                    a.btn(href=project.link, target = "_blank")
+                        i.fab.fa-github.left
                         strong Watch it!
 
 mixin generateEducations(educations)
     ul.collection
         each education in educations
             li.collection-item                
-                h4.grey-text= education.inst
+                h4= education.inst
                     i.fas.fa-university.left
                 h5= education.date
                     i.fa.fa-calendar-alt.left.grey-text
@@ -32,38 +32,45 @@ mixin generateList(items)
                     p.center-align.black-text.truncate= item.name
 
 block content
-    .parallax-container.valign-wrapper.center
+    header
+        .parallax-container.valign-wrapper.center
+            .container
+                h1.white-text= resume.name
+                h4.white-text= resume.job
+            .parallax
+                img(src="./images/ethBackground.jpg")
+    main
+        .section.grey.lighten-5
+            .container
+                .row.section
+                    h1.header Projects
+                    +generateProjects(resume.projects)
+                .row.section
+                    h1.header Languages
+                    +generateList(resume.languages)
+                .row.section
+                    h1.header Frameworks  
+                    +generateList(resume.frameworks)
+                .row.section
+                    h1.header Databases
+                    +generateList(resume.databases)
+                .row.section
+                    h1.header Tools
+                    +generateList(resume.tools)
+                .row.section
+                    h1.header Education
+                    +generateEducations(resume.education)
+    footer.page-footer
         .container
-            h1.white-text= resume.name
-            h4.white-text= resume.job
-        .parallax
-            img(src="./images/ethBackground.jpg")
-    .section.grey.lighten-5
-        .row.container
-            h1.center About me            
-            p.flow-text= resume.about
-        .row.container
-            h1.header.center Projects
-            +generateProjects(resume.projects)
-        .row.container
-            h1.header.center Languages
-            +generateList(resume.languages)
-        .row.container
-            h1.header.center Frameworks  
-            +generateList(resume.frameworks)                                      
-        .row.container
-            h1.header.center Databases
-            +generateList(resume.databases)
-        .row.container
-            h1.header.center Tools
-            +generateList(resume.tools)                      
-        .row.container
-            h1.header.center Education
-            +generateEducations(resume.education)
-    .parallax-container
-        .parallax
-            img(src="./images/ethBackground.jpg")
-
+            .row.center
+                h4 Contact me!
+                a(href="https://www.linkedin.com/in/sjaviervarela/", target = "_blank")
+                    i.icon.fab.fa-linkedin.medium
+                a(href="https://github.com/SJVarela", target = "_blank")
+                    i.icon.fab.fa-github-square.grey-text.medium 
+        .footer-copyright
+            .container
+                p ©2019 Santiago Varela 
 
 
     script(src="https://code.jquery.com/jquery-3.2.1.min.js")

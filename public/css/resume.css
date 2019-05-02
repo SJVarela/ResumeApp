@@ -1,4 +1,8 @@
-h1 {
+.header {
   text-align: center;
-  color: rgb(170, 170, 170);
+  color: rgb(238, 110, 115);
+  font-weight: 300;
+}
+.icon {
+  margin: 10px;
 }

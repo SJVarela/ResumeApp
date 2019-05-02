@@ -101,7 +101,7 @@ module.exports.index = function(req, res) {
       ],
       education: [
         {
-          inst: "Universidad abierta interamericana",
+          inst: "Universidad Abierta Interamericana",
           date: "2015 - 2018",
           degree: "System Engineering"
         },
