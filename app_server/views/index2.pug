@@ -23,20 +23,21 @@ mixin generateEducations(educations)
                     i.fa.fa-calendar-alt.left.grey-text
                 h5= education.degree
 mixin generateList(items)
-    each item in items
-        .col.s2
-            .card
-                .card-image
-                    img.circle.responsive-img(src=item.imgUri)
-                .card-content.hide-on-small-only
-                    p.center-align.black-text.truncate= item.name
+    .flexbox
+        each item in items
+            .center-col.col.s2
+                .card
+                    .card-image
+                        img.circle.responsive-img(src=item.imgUri)
+                    .card-content.hide-on-small-only
+                        p.center-align.black-text.truncate= item.name
 
 block content
     header
         .parallax-container.valign-wrapper.center
             .container
-                h1.white-text= resume.name
-                h4.white-text= resume.job
+                h1.white-text.name-text= resume.name
+                h4.white-text.name-text= resume.job
             .parallax
                 img(src="./images/ethBackground.jpg")
     main

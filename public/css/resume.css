@@ -1,3 +1,6 @@
+body {
+  white-space: pre-wrap;
+}
 .header {
   text-align: center;
   color: rgb(238, 110, 115);
@@ -5,4 +8,19 @@
 }
 .icon {
   margin: 10px;
+}
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-col {
+  margin-left: 0 !important;
+}
+
+.name-text {
+  text-shadow: 1px 1px 5px black;
 }
