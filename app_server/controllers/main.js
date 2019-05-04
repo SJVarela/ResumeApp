@@ -1,5 +1,5 @@
 module.exports.index = function(req, res) {
-  res.render("index2", {
+  res.render("index3", {
     title: "Santiago Varela Resume",
     resume: {
       name: "Santiago Varela",
