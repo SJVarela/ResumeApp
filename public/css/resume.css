@@ -43,6 +43,15 @@ body {
   text-decoration: solid;
   border-left: none;
 }
+.collapsible-header {
+  font-size: 20px;
+}
+li.active div.collapsible-header {
+  text-align: center;
+  color: rgb(238, 110, 115);
+  font-weight: 300;
+}
+
 @media only screen and (max-width: 992px) {
   .content {
     padding-left: 0 !important;

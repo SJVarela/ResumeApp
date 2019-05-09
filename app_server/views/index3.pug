@@ -11,7 +11,7 @@ mixin generateProjects(projects)
                 .card-action.grey.lighten-3
                     a.btn(href=project.link, target = "_blank").red.lighten-2
                         i.fab.fa-github.left
-                        strong Watch it!
+                        strong Take a look
 mixin generateList(items)
     .flexbox
         each item in items
@@ -21,7 +21,15 @@ mixin generateList(items)
                         img.circle.responsive-img(src=item.imgUri)
                     .card-content.hide-on-small-only
                         p.center-align.black-text.truncate= item.name                        
-
+mixin generateEducations(educations)
+    ul.collection
+        each education in educations
+            li.collection-item                
+                h4= education.inst
+                    i.fas.fa-university.left
+                h5= education.date
+                    i.fa.fa-calendar-alt.left.grey-text
+                h5= education.degree
 
 block content
     //- Sidenav
@@ -29,7 +37,7 @@ block content
         .container
             //- Personal info
             .section.center
-                img(src="/images/ethBackground.jpg", alt="").circle.responsive-img
+                img(src="/images/portrait.jpg", alt="").circle.responsive-img
                 h5.header= resume.name
                 h6= resume.job
             //- Social media
@@ -49,7 +57,7 @@ block content
                     li
                         a(href="#skills") Skills
                     li
-                        a(href="#section3") Section 3
+                        a(href="#education") Education
     //- Sidenav Button
     .fixed-action-btn
         a(href="#" data-target="slide-out").sidenav-trigger.hide-on-large-only.btn.red.lighten-3
@@ -66,10 +74,10 @@ block content
                     .container                    
                         h1.white-text.name-text= resume.name
                         h4.white-text.name-text= resume.job
-                        a(href="https://www.linkedin.com/in/sjaviervarela/", target = "_blank")
-                            i.icon.fab.fa-linkedin.medium
-                        a(href="https://github.com/SJVarela", target = "_blank")
-                            i.icon.fab.fa-github-square.grey-text.medium 
+                        //- a(href="https://www.linkedin.com/in/sjaviervarela/", target = "_blank")
+                        //-     i.icon.fab.fa-linkedin.medium
+                        //- a(href="https://github.com/SJVarela", target = "_blank")
+                        //-     i.icon.fab.fa-github-square.grey-text.medium 
         //- Content begins
         .container
             //- Projects            
@@ -96,10 +104,22 @@ block content
                         .collapsible-header Tools
                         .collapsible-body
                             +generateList(resume.tools)
-            div(id="section3").row.scrollspy
-                h1.header Section 3
-                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae deleniti explicabo ratione nesciunt aliquam? Doloribus non iure, officia minus nihil corrupti? Nihil soluta nemo ipsam repellendus perferendis neque, repudiandae quisquam!
-                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores sunt adipisci beatae nisi voluptas aliquid, dolor non, quam, repellendus ut autem repellat pariatur. Maxime doloremque accusamus quam modi quo alias.
+            //- Education
+            div(id="education").row.scrollspy
+                h1.header Education
+                +generateEducations(resume.education)
+
+        footer.page-footer
+            .container
+                .row.center
+                    h4 Contact me!
+                    a(href="https://www.linkedin.com/in/sjaviervarela/", target = "_blank")
+                        i.icon.fab.fa-linkedin.medium
+                    a(href="https://github.com/SJVarela", target = "_blank")
+                        i.icon.fab.fa-github-square.grey-text.medium 
+            .footer-copyright
+                .container
+                    p ©2019 Santiago Varela 
 
 
 
