@@ -1,0 +1,131 @@
+extends layout
+
+mixin generateProjects(projects)
+    each project in projects
+        .col.m12.l6
+            .card.large
+                .card-content
+                    h3.header
+                        b= project.title
+                    p.flow-text= project.description
+                .card-action.grey.lighten-3
+                    a.btn(href=project.link, target = "_blank").red.lighten-2
+                        i.fab.fa-github.left
+                        strong Take a look
+mixin generateList(items)
+    .flexbox
+        each item in items
+            .center-col.col.s2
+                .card
+                    .card-image
+                        img.circle.responsive-img(src=item.imgUri)
+                    .card-content.hide-on-small-only
+                        p.center-align.black-text.truncate= item.name                        
+mixin generateEducations(educations)
+    ul.collection
+        each education in educations
+            li.collection-item                
+                h4= education.inst
+                    i.fas.fa-university.left
+                h5= education.date
+                    i.fa.fa-calendar-alt.left.grey-text
+                h5= education.degree
+
+block content
+    //- Sidenav
+    div(id="slide-out").sidenav.sidenav-fixed.grey.lighten-4        
+        .container
+            //- Personal info
+            .section.center
+                img(src="/images/portrait.jpg", alt="").circle.responsive-img
+                h5.header= resume.name
+                h6= resume.job
+            //- Social media
+            .section.center
+                a(href="https://www.linkedin.com/in/sjaviervarela/", target = "_blank")
+                    i.icon.fab.fa-linkedin
+                a(href="https://github.com/SJVarela", target = "_blank")
+                    i.icon.fab.fa-github-square.grey-text 
+            .divider
+            //- Scrollspy
+            .section
+                ul.table-of-contents
+                    li
+                        a(href="#home") Home
+                    li
+                        a(href="#projects") Projects
+                    li
+                        a(href="#skills") Skills
+                    li
+                        a(href="#education") Education
+    //- Sidenav Button
+    .fixed-action-btn
+        a(href="#" data-target="slide-out").sidenav-trigger.hide-on-large-only.btn.red.lighten-3
+            i.fa.fa-bars.white-text
+
+    //- Content
+    .col.s12.content
+        //- Presentation
+        div(id="home").scrollspy
+            .parallax-container.center
+                .parallax.valign-wrapper
+                    img(src="/images/ethBackground.jpg")
+                .parallax.valign-wrapper
+                    .container                    
+                        h1.white-text.name-text= resume.name
+                        h4.white-text.name-text= resume.job
+                        //- a(href="https://www.linkedin.com/in/sjaviervarela/", target = "_blank")
+                        //-     i.icon.fab.fa-linkedin.medium
+                        //- a(href="https://github.com/SJVarela", target = "_blank")
+                        //-     i.icon.fab.fa-github-square.grey-text.medium 
+        //- Content begins
+        .container
+            //- Projects            
+            div(id="projects").scrollspy.row.section                    
+                h1.header Projects
+                +generateProjects(resume.projects)
+            //- Skills
+            div(id="skills").row.scrollspy.section
+                h1.header Skills
+                ul.collapsible
+                    li
+                        .collapsible-header Languages
+                        .collapsible-body
+                            +generateList(resume.languages)
+                    li
+                        .collapsible-header Frameworks
+                        .collapsible-body
+                            +generateList(resume.frameworks)
+                    li
+                        .collapsible-header Databases
+                        .collapsible-body
+                            +generateList(resume.databases)
+                    li
+                        .collapsible-header Tools
+                        .collapsible-body
+                            +generateList(resume.tools)
+            //- Education
+            div(id="education").row.scrollspy
+                h1.header Education
+                +generateEducations(resume.education)
+
+        footer.page-footer
+            .container
+                .row.center
+                    h4 Contact me!
+                    a(href="https://www.linkedin.com/in/sjaviervarela/", target = "_blank")
+                        i.icon.fab.fa-linkedin.medium
+                    a(href="https://github.com/SJVarela", target = "_blank")
+                        i.icon.fab.fa-github-square.grey-text.medium 
+            .footer-copyright
+                .container
+                    p ©2019 Santiago Varela 
+
+
+
+
+
+
+    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
+    script(src="/js/materialize.min.js")
+    script(src="/js/init.js")

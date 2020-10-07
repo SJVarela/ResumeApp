@@ -1,0 +1,59 @@
+body {
+  white-space: pre-wrap;
+}
+.header {
+  text-align: center;
+  color: rgb(238, 110, 115);
+  font-weight: 300;
+}
+.icon {
+  font-size: 3rem;
+  margin: 10px;
+}
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-col {
+  margin-left: 0 !important;
+}
+
+.name-text {
+  text-shadow: 1px 1px 5px black;
+}
+.parallax-container {
+  height: 100vh;
+}
+.fixed-action-btn {
+  right: auto;
+  top: auto;
+  bottom: auto;
+  padding: 1rem;
+}
+
+.content {
+  padding-left: 300px !important;
+}
+.table-of-contents a.active {
+  color: #eb8383;
+  text-decoration: solid;
+  border-left: none;
+}
+.collapsible-header {
+  font-size: 20px;
+}
+li.active div.collapsible-header {
+  text-align: center;
+  color: rgb(238, 110, 115);
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 992px) {
+  .content {
+    padding-left: 0 !important;
+  }
+}
