@@ -18,10 +18,10 @@ mixin generateList(items)
             .center-col.col.s2
                 .card
                     .card-image
-                        img.circle.responsive-img(src=item.imgUri)
+                        img(src=item.imgUri)
                     .card-content.hide-on-small-only
                         p.center-align.black-text.truncate= item.name                        
-mixin generateEducations(educations)
+mixin generateEducation(educations)
     ul.collection
         each education in educations
             li.collection-item                
@@ -30,6 +30,17 @@ mixin generateEducations(educations)
                 h5= education.date
                     i.fa.fa-calendar-alt.left.grey-text
                 h5= education.degree
+
+mixin generateExperience(experiences)
+    ul.collection
+        each experience in experiences
+            li.collection-item                
+                h4= experience.inst
+                    i.far.fa-building.left
+                h5= experience.date
+                    i.fa.fa-calendar-alt.left.grey-text
+                h5= experience.role
+                p= experience.description
 
 block content
     //- Sidenav
@@ -53,9 +64,11 @@ block content
                     li
                         a(href="#home") Home
                     li
-                        a(href="#projects") Projects
+                        a(href="#experience") Experience
                     li
-                        a(href="#skills") Skills
+                        a(href="#skills") Skills                        
+                    li
+                        a(href="#projects") Projects
                     li
                         a(href="#education") Education
     //- Sidenav Button
@@ -80,10 +93,10 @@ block content
                         //-     i.icon.fab.fa-github-square.grey-text.medium 
         //- Content begins
         .container
-            //- Projects            
-            div(id="projects").scrollspy.row.section                    
-                h1.header Projects
-                +generateProjects(resume.projects)
+            //- Experience            
+            div(id="experience").scrollspy.row.section                    
+                h1.header Experience
+                +generateExperience(resume.experience)
             //- Skills
             div(id="skills").row.scrollspy.section
                 h1.header Skills
@@ -104,10 +117,15 @@ block content
                         .collapsible-header Tools
                         .collapsible-body
                             +generateList(resume.tools)
+            //- Projects            
+            div(id="projects").scrollspy.row.section                    
+                h1.header Projects
+                +generateProjects(resume.projects)
+
             //- Education
             div(id="education").row.scrollspy
                 h1.header Education
-                +generateEducations(resume.education)
+                +generateEducation(resume.education)
 
         footer.page-footer
             .container
@@ -119,13 +137,8 @@ block content
                         i.icon.fab.fa-github-square.grey-text.medium 
             .footer-copyright
                 .container
-                    p ©2019 Santiago Varela 
+                    p ©2020 Santiago Varela 
 
-
-
-
-
-
-    script(src="https://code.jquery.com/jquery-3.2.1.min.js")
-    script(src="/js/materialize.min.js")
+    
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js")
     script(src="/js/init.js")
